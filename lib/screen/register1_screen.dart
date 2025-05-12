@@ -27,12 +27,6 @@ class RegisterScreen extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: const SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(20),
-          child: Column(children: [CardRegister(), SizedBox(height: 20)]),
-        ),
-      ),
     );
   }
 }
