@@ -66,7 +66,7 @@ class _AuthModeState extends State<AuthModeScreen> {
       body: Stack(
         children: [
           AnimatedPositioned(
-            duration: const Duration(milliseconds: 200),
+            duration: const Duration(milliseconds: 180),
             left: isRegistering ? 0 : -screenWidth,
             right: isRegistering ? 0 : screenWidth,
             top: 0,
@@ -90,12 +90,14 @@ class _AuthModeState extends State<AuthModeScreen> {
                           borderRadius: BorderRadius.circular(16),
                           borderSide: BorderSide(
                             color: Color.fromARGB(224, 72, 128, 133),
+                            width: 3,
                           ),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(16),
                           borderSide: BorderSide(
                             color: Color.fromARGB(255, 0, 120, 130),
+                            width: 3,
                           ),
                         ),
                       ),
@@ -110,12 +112,14 @@ class _AuthModeState extends State<AuthModeScreen> {
                           borderRadius: BorderRadius.circular(16),
                           borderSide: BorderSide(
                             color: Color.fromARGB(224, 72, 128, 133),
+                            width: 3,
                           ),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(16),
                           borderSide: BorderSide(
                             color: Color.fromARGB(255, 0, 120, 130),
+                            width: 3,
                           ),
                         ),
                       ),
@@ -130,12 +134,14 @@ class _AuthModeState extends State<AuthModeScreen> {
                           borderRadius: BorderRadius.circular(16),
                           borderSide: BorderSide(
                             color: Color.fromARGB(224, 72, 128, 133),
+                            width: 3,
                           ),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(16),
                           borderSide: BorderSide(
                             color: Color.fromARGB(255, 0, 120, 130),
+                            width: 3,
                           ),
                         ),
                       ),
@@ -156,7 +162,7 @@ class _AuthModeState extends State<AuthModeScreen> {
             ),
           ),
           AnimatedPositioned(
-            duration: const Duration(milliseconds: 200),
+            duration: const Duration(milliseconds: 180),
             left: isRegistering ? screenWidth : 0,
             right: isRegistering ? -screenWidth : 0,
             top: 0,
@@ -164,25 +170,68 @@ class _AuthModeState extends State<AuthModeScreen> {
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(16),
               child: AuthCard(
-                title: "Вход",
+                title: "Sign In",
                 currentAuthMode: _authMode,
                 cardAuthMode: AuthMode.login,
                 onPressed: _handleLoginCardPressed,
                 child: Column(
-                  children: const [
+                  children: [
                     Column(
-                      children: const [
+                      children: [
                         SizedBox(height: 20),
                         TextField(
+                          style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                             labelText: "Имя пользователя",
+                            labelStyle: TextStyle(color: Colors.white),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                              borderSide: BorderSide(
+                                color: Color.fromARGB(224, 72, 128, 133),
+                                width: 3,
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                              borderSide: BorderSide(
+                                color: Color.fromARGB(255, 0, 120, 130),
+                                width: 3,
+                              ),
+                            ),
                           ),
                         ),
+                        SizedBox(height: 12),
                         TextField(
-                          decoration: InputDecoration(labelText: "Пароль"),
+                          style: TextStyle(color: Colors.white),
+                          decoration: InputDecoration(
+                            labelStyle: TextStyle(color: Colors.white),
+                            labelText: "Пароль",
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                              borderSide: BorderSide(
+                                color: Color.fromARGB(224, 72, 128, 133),
+                                width: 3,
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                              borderSide: BorderSide(
+                                color: Color.fromARGB(255, 0, 120, 130),
+                                width: 3,
+                              ),
+                            ),
+                          ),
                         ),
                         SizedBox(height: 20),
-                        ElevatedButton(onPressed: null, child: Text("Войти")),
+                        ElevatedButton(
+                          onPressed: null,
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          child: Text("Войти"),
+                        ),
                       ],
                     ),
                   ],
