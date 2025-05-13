@@ -45,6 +45,7 @@ class _AuthModeState extends State<AuthModeScreen> {
     return Scaffold(
       backgroundColor: Color.fromARGB(222, 178, 240, 211),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(25),
@@ -74,7 +75,7 @@ class _AuthModeState extends State<AuthModeScreen> {
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(10),
               child: AuthCard(
-                title: "Registration",
+                title: "Регистрация",
                 currentAuthMode: _authMode,
                 cardAuthMode: AuthMode.register,
                 onPressed: _handleRegisterCardPressed,
@@ -170,7 +171,7 @@ class _AuthModeState extends State<AuthModeScreen> {
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(16),
               child: AuthCard(
-                title: "Sign In",
+                title: "Войти",
                 currentAuthMode: _authMode,
                 cardAuthMode: AuthMode.login,
                 onPressed: _handleLoginCardPressed,
